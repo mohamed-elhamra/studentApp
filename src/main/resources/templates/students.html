@@ -45,7 +45,15 @@
                     <td th:text="${s.getName()}"></td>
                     <td th:text="${s.getDateOfBirth()}"></td>
                     <td th:text="${s.getEmail()}"></td>
-                    <td th:text="${s.getPhoto()}"></td>
+                    <td >
+                        <img th:src="@{getPhoto(id=${s.getId()})}" width="100" height="100"/>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{delete(id=${s.getId()})}" role="button">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" th:href="@{edit(id=${s.getId()})}" role="button">Edit</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
